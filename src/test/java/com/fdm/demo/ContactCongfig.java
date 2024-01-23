@@ -1,8 +1,12 @@
 package com.fdm.demo;
 
+import java.util.Map;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.fdm.demo.contact.Contact;
+import com.fdm.demo.contact.ContactMapRepository;
 import com.fdm.demo.contact.ContactRepository;
 import com.fdm.demo.contact.ContactService;
 
@@ -13,6 +17,9 @@ public class ContactCongfig {
 	ContactService contactService(ContactRepository contactRepo) {
 		return new ContactService(contactRepo);
 	}
-	
+	@Bean
+	ContactMapRepository contactRepo(Map<Long, Contact> contacts) {
+		return new ContactMapRepository(contacts);
+	}
 	
 }
