@@ -1,4 +1,4 @@
-package com.fdm.demo;
+package com.fdm.demo.config;
 
 import java.util.Map;
 
